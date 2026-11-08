@@ -16,6 +16,7 @@ interface CostChartProps {
 
 export function CostChart({ readings, rates, result, best }: CostChartProps) {
     const savings = result.without - result.total
+    const additionalSavings = Math.max(0, result.total - best.total)
     const costChart = useMemo<EChartsOption>(() => {
         const labels = chartLabels(readings)
         const area = (name: string, values: number[], color: string) => ({
@@ -66,20 +67,19 @@ export function CostChart({ readings, rates, result, best }: CostChartProps) {
                 option={costChart}
                 label="Accumulated cost with and without a contract, showing fixed contract charges and metered costs. Use the chart zoom slider to inspect a time period."
             />
-            <p className="panel__note">
-                The contract charge accumulates for every hour, whether or not its energy is used.
-                Hover over the chart for fixed and metered costs.
-            </p>
+
             <div
                 className={`cost-chart__savings ${
                     savings >= 0 ? "cost-chart__savings--positive" : "cost-chart__savings--negative"
                 }`}
             >
-                <div className="cost-chart__savings-label">Savings</div>
+                <div className="cost-chart__savings-label">Saved over metered usage</div>
                 <div className="cost-chart__savings-value">{money(savings)}</div>
-                <div className="cost-chart__savings-detail">
-                    Cost without contract minus fixed and metered contract charges
-                </div>
+                {additionalSavings > 0 && (
+                    <div className="cost-chart__savings-detail">
+                        With an optimal contract, you could save {money(additionalSavings)} more!
+                    </div>
+                )}
             </div>
             <div className="stats-grid stats-grid--four">
                 <Stat label="Without contract" value={money(result.without)} />

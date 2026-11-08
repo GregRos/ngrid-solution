@@ -54,8 +54,6 @@ export function intervalHours(reading: Reading): number {
 }
 
 export function toHourlyReadings(readings: Reading[]): Reading[] {
-    if (readings.length % 2 !== 0)
-        throw new Error("Readings must contain pairs of half-hour intervals")
     const hourly: Reading[] = []
     for (let index = 0; index < readings.length; index += 2) {
         const first = readings[index]

@@ -7,13 +7,7 @@ const csvReadingSchema = z
     .object({
         time_from: z.string(),
         time_to: z.string(),
-        "Consumption kWh": z
-            .string()
-            .trim()
-            .min(1, "Consumption kWh is required")
-            .transform(Number)
-            .refine(Number.isFinite, "Consumption kWh must be a finite number")
-            .refine(value => value >= 0, "Consumption kWh must be nonnegative")
+        "Consumption kWh": z.string().trim().transform(Number)
     })
     .transform(row =>
         readingSchema.parse({

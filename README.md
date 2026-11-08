@@ -9,6 +9,8 @@ The optimization solution of finding the right contract is covered in:
 It's implemented in the code [here](./src/compute/index.ts)
 
 ## Presentation
+The source code is in `src`. `app` only contains some bootstrap files.
+
 The solution is presented as an interactive app that visualizes how different contracts affect energy costs.
 
 The app is written in TypeScript and is client-only. It fetches the CSV as though from a server.
