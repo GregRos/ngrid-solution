@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "target": "ES2024",
+    "lib": ["ES2024"],
+    "tsBuildInfoFile": "../dist/src.tsbuildinfo",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "rewriteRelativeImportExtensions": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "declarationMap": true,
+    "noEmit": true,
+    "strict": true,
+    "sourceMap": true,
+    // Treat files as modules even if it doesn't use import/export
+    "moduleDetection": "force",
+
+    // Allow JS files to be imported from TS and vice versa
+    "allowJs": true
+  },
+  "include": []
+}

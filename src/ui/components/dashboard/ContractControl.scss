@@ -1,0 +1,73 @@
+$primary: #4773ed;
+
+.panel--contract {
+    padding: 18px 24px;
+
+    .section-heading {
+        margin-bottom: 14px;
+    }
+
+    .input-group-text,
+    .form-control {
+        min-height: 36px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+}
+
+.contract__controls {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 20px;
+    align-items: end;
+}
+
+.form-range::-webkit-slider-thumb,
+.range-pair input::-webkit-slider-thumb {
+    background: $primary;
+}
+
+.form-range::-moz-range-thumb {
+    background: $primary;
+}
+
+.contract__amount {
+    margin: 0;
+}
+
+.contract__amount .input-group {
+    margin-top: 9px;
+}
+
+.contract__optimize {
+    background: #416bea;
+    border-color: #416bea;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.contract__optimal-note {
+    margin-top: 12px;
+    padding: 7px 10px;
+    background: #f5f8ff;
+    color: #7589b2;
+    font-size: 12px;
+    border-radius: 8px;
+
+    strong {
+        color: #426ad2;
+    }
+}
+
+@media (max-width: 767px) {
+    .panel--contract {
+        padding: 16px;
+    }
+
+    .contract__controls {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}

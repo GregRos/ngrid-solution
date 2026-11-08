@@ -1,0 +1,58 @@
+.hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.hero__eyebrow {
+    color: #5270ba;
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero__brand-icon {
+    display: inline-grid;
+    place-items: center;
+    background: #3867e8;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    margin-right: 8px;
+    font-size: 19px;
+}
+
+.hero__period {
+    white-space: nowrap;
+    border: 1px solid #e8ecf3;
+    border-radius: 9px;
+    background: #fff;
+    padding: 10px 13px;
+    color: #718096;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hero__period-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3ab89b;
+    margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+    .hero {
+        display: block;
+    }
+
+    .hero__period {
+        display: inline-block;
+        margin-top: 20px;
+    }
+}

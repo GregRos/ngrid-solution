@@ -1,0 +1,46 @@
+.cost-chart {
+    .chart {
+        height: 330px;
+    }
+
+    &__savings {
+        margin: 0 0 22px;
+        padding: 22px 26px;
+        border-radius: 12px;
+        color: #fff;
+    }
+
+    &__savings--positive {
+        background: linear-gradient(120deg, #11866f, #20ae8b);
+    }
+
+    &__savings--negative {
+        background: linear-gradient(120deg, #b83d4b, #df6268);
+    }
+
+    &__savings-label {
+        font-size: 13px;
+        font-weight: 700;
+        opacity: 0.9;
+    }
+
+    &__savings-value {
+        margin-top: 2px;
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.15;
+    }
+
+    &__savings-detail {
+        margin-top: 7px;
+        font-size: 12px;
+        opacity: 0.85;
+    }
+}
+
+@media (max-width: 767px) {
+    .cost-chart .chart {
+        height: 290px;
+    }
+}

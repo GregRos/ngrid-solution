@@ -1,0 +1,24 @@
+{
+  "references": [
+    {
+      "path": "./packages/sample-interfaces/tsconfig.json"
+    },
+    {
+      "path": "./packages/metadata/tsconfig.json"
+    },
+    {
+      "path": "./packages/instruments/tsconfig.json"
+    },
+    {
+      "path": "./packages/k8ts/tsconfig.json"
+    },
+    {
+      "path": "./packages/examples/tsconfig.json"
+    }
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "sourceMap": true
+  },
+  "files": []
+}
