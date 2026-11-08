@@ -1,4 +1,4 @@
-Generate a React-based client-only app that visualizes the cost curves discussed in #file:./solution.md.
+Generate a React-based client-only app that visualizes the cost curves discussed in #file:../optimization/solution.md
 
 We want to visualize the contract cost vs metered cost, so we should use an interactive graph.
 
