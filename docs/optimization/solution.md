@@ -5,7 +5,7 @@ Let each observation $h$ represent an interval of duration $\Delta t_h$ hours, w
 For a given $q$, the contract charge over the full period is $r_f q T$, where $T=\sum_h \Delta t_h$. In interval $h$, any demand above $q$ costs $r(h)$ per kWh. Thus the total cost is
 
 $$
-C(q) = r_f q T + \sum_h \Delta t_h\,r(h)\max(u_h-q,0).
+C(q) = r_f q T + \sum_h \Delta t_h r(h)\max(u_h-q,0).
 $$
 
 For half-hourly readings, use $\Delta t_h=0.5$. If the input records energy $e_h$ in kWh per interval rather than an average consumption rate, use $u_h=e_h/\Delta t_h$ in this formula.
@@ -15,21 +15,21 @@ For half-hourly readings, use $\Delta t_h=0.5$. If the input records energy $e_h
 The cost is a convex, piecewise-linear function of $q$. Between observed consumption levels, its slope is
 
 $$
-C'(q)=r_fT-\sum_{h:u_h>q}\Delta t_h\,r(h).
+C'(q)=r_fT-\sum_{h:u_h>q}\Delta t_h r(h).
 $$
 
 Increasing $q$ by a small amount increases the fixed contract charge, while reducing the regular-price charges for intervals whose consumption exceeds $q$. The minimum is reached where these two effects balance. Specifically, for $q>0$ an optimal amount satisfies
 
 $$
-\sum_{h:u_h>q}\Delta t_h\,r(h)
-\;\leq\; r_fT \;\leq\;
-\sum_{h:u_h\geq q}\Delta t_h\,r(h).
+\sum_{h:u_h>q}\Delta t_h r(h)
+\leq r_fT \leq
+\sum_{h:u_h\geq q}\Delta t_h r(h).
 $$
 
 The two sums can differ at a consumption level observed in the data; this is where the slope changes. At the boundary $q=0$, it is optimal when
 
 $$
-r_fT \geq \sum_{h:u_h>0}\Delta t_h\,r(h).
+r_fT \geq \sum_{h:u_h>0}\Delta t_h r(h).
 $$
 
 ## How to find $q$
@@ -66,5 +66,4 @@ for (const interval of intervals) {
 ```
 
 Each interval contributes weight $\Delta t_h r(h)$, and `targetWeight` is $r_fT$. Sorting by usage from highest to lowest and accumulating the weights finds the contract amount where the optimality condition is met. If the threshold lands exactly between two usage levels, this code returns one endpoint of the range of optimal amounts.
-
 
